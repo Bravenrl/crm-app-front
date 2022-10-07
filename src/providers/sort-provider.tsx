@@ -1,27 +1,9 @@
 import {
   createContext,
-  Dispatch,
-  SetStateAction,
   useMemo,
   useState,
 } from 'react';
-import { TypeTableHeaders } from '../types';
-
-type TypeSetState<T> = Dispatch<SetStateAction<T>>;
-
-export type TypeSort = {
-  order: 'asc' | 'desc' | '';
-  name: keyof TypeTableHeaders | '';
-};
-
-type TypeSortContext = {
-  sort: TypeSort;
-  setSort: TypeSetState<TypeSort>;
-};
-
-type TypeSortProvider = {
-  children: JSX.Element | JSX.Element[];
-};
+import { TypeProvider, TypeSortContext } from './provider-types';
 
 export const initialSortValue: TypeSortContext = {
   sort: {
@@ -33,7 +15,7 @@ export const initialSortValue: TypeSortContext = {
 
 export const SortContext = createContext<TypeSortContext>(initialSortValue);
 
-export const SortProvider = ({ children }: TypeSortProvider) => {
+export const SortProvider = ({ children }: TypeProvider) => {
   const [sort, setSort] = useState(initialSortValue.sort);
 
   const value = useMemo(() => ({ sort, setSort }), [sort]);

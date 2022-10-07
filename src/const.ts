@@ -1,4 +1,8 @@
-import { TypeFilterParams, TypeTableHeaders } from "./types";
+import {
+  TypeFilterExtraParams,
+  TypeTableHeaders,
+  TypeFilterMainParams,
+} from './types';
 
 export const ITEMS_PER_PAGE = 10;
 
@@ -9,7 +13,13 @@ export const TableHeaders: TypeTableHeaders = {
   distance: 'Расстояние',
 };
 
-export const FilterParams: TypeFilterParams = {
+export const FilterMainParams: TypeFilterMainParams = {
+  ...TableHeaders,
+  default: '-- select a column --',
+};
+
+export const FilterExtraParams: TypeFilterExtraParams = {
+  default: '-- select a param --',
   equal: 'Равно',
   less: 'Меньше',
   more: 'Больше',

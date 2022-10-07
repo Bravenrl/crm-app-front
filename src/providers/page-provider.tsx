@@ -1,28 +1,14 @@
-import { createContext, Dispatch, SetStateAction, useMemo, useState } from 'react';
+import { createContext, useMemo, useState } from 'react';
+import { TypePageContext, TypeProvider } from './provider-types';
 
-type TypeSetState<T> = Dispatch<SetStateAction<T>>;
-
-type TypePageContext = {
-  page: number;
-  setPage: TypeSetState<number>;
-};
-
-type TypePageProvider = {
-  children: JSX.Element | JSX.Element[];
-};
-
-export const initialPageValue = { page: 1, setPage: () => {} };
+export const initialPageValue: TypePageContext = { page: 1, setPage: () => {} };
 
 export const PageContext = createContext<TypePageContext>(initialPageValue);
 
-export const PageProvider = ({ children }: TypePageProvider) => {
+export const PageProvider = ({ children }: TypeProvider) => {
   const [page, setPage] = useState(initialPageValue.page);
 
-  const value = useMemo(() => ({page, setPage}), [page])
+  const value = useMemo(() => ({ page, setPage }), [page]);
 
-  return (
-    <PageContext.Provider value={value}>
-      {children}
-    </PageContext.Provider>
-  );
+  return <PageContext.Provider value={value}>{children}</PageContext.Provider>;
 };

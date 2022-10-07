@@ -1,4 +1,5 @@
-import { TypeSort } from '../providers/sort-provider';
+
+import { TypeSort } from '../providers/provider-types';
 import { TypeItem, TypeTableHeaders } from '../types';
 
 export const sortByField = (sort: TypeSort) => {

@@ -1,16 +1,17 @@
 import { useData } from '../../hooks/useData';
+import { usePage } from '../../hooks/usePage';
 import { mockData } from '../../mock';
 import Pagination from '../pagination/pagination';
 import Table from '../table/table';
 
-type TableWrapperProps = {};
-
-function TableWrapper({}: TableWrapperProps): JSX.Element {
-  const items = useData();
+function TableWrapper(): JSX.Element {
+  const items = useData(mockData);
+  const pageItems = usePage(items);
+  console.log(items)
   return (
         <div>
-      <Table items={items} />
-      <Pagination itemsLength={mockData.length} />
+      <Table items={pageItems} />
+      <Pagination itemsLength={items.length} />
     </div>
   );
 }
