@@ -1,0 +1,21 @@
+.pagination {
+  width: 90%;
+  margin: 3em auto;
+
+  .list {
+    list-style: none;
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 20px;
+    justify-content: center;
+  }
+
+  .button {
+    border-radius: 20%;
+    margin-right: 1em;
+  }
+
+  .buttonActive {
+    border: 2px solid #000;
+  }
+}

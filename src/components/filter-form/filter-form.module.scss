@@ -1,0 +1,31 @@
+.filter {
+  flex: 0 0 20%;
+
+  form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+
+    h1 {
+        margin: 0;
+    }
+
+    select {
+      padding: 0.4em;
+      background-color: #fff;
+      width: 70%;
+      border-color: #aaa;
+      border-radius: 3px;
+    }
+
+    input {
+        width: calc(70% - 0.8em);
+        padding: 0.4em;
+    }
+
+    button {
+        width: 50%;
+    }
+  }
+}

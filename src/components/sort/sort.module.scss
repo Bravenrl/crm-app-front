@@ -1,0 +1,43 @@
+.sort {
+  display: flex;
+
+  .button {
+    cursor: pointer;
+    position: relative;
+    width: 2em;
+    height: 2em;
+    border: none;
+    outline: none;
+    background-color: transparent;
+
+    &::before {
+      opacity: 0.5;
+    }
+    &:hover,
+    &::before {
+      opacity: 0.3;
+    }
+  }
+
+  .buttonUp::before {
+    content: '';
+    top: -6px;
+    left: 0;
+    position: absolute;
+    border: 1em solid transparent;
+    border-bottom: 1em solid black;
+  }
+
+  .buttonDown::before {
+    content: '';
+    bottom: -6px;
+    left: 0;
+    position: absolute;
+    border: 1em solid transparent;
+    border-top: 1em solid black;
+  }
+
+  .buttonActive::before {
+    opacity: 1;
+  }
+}
