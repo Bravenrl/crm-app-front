@@ -1,3 +1,5 @@
+import { TableHeaders } from '../../../const';
+import { TypeTableHeaders } from '../../../types';
 import Sort from '../../sort/sort';
 import styles from './table-head.module.scss';
 
@@ -7,19 +9,17 @@ function TableHead({}: TableHeadProps): JSX.Element {
   return (
     <thead>
       <tr>
-        <th scope='col'>
-          <div className={styles.content}>
-            <span>Дата</span>
-          </div>
-        </th>
-        <th scope='col'>
-          <div className={styles.content}>
-            <span>Название</span>
-            <Sort />
-          </div>
-        </th>
-        <th scope='col'>Количество</th>
-        <th scope='col'>Расстояние</th>
+        {Object.keys(TableHeaders).map((item: string) => {
+          const name = TableHeaders[item as keyof TypeTableHeaders];
+          return (
+            <th scope='col' key={item}>
+              <div className={styles.content}>
+                <span>{name}</span>
+                {name !== TableHeaders.date && <Sort name = {item as keyof TypeTableHeaders}/>}
+              </div>
+            </th>
+          );
+        })}
       </tr>
     </thead>
   );

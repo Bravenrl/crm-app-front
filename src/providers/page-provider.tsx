@@ -11,7 +11,7 @@ type TypePageProvider = {
   children: JSX.Element | JSX.Element[];
 };
 
-const initialPageValue = { page: 1, setPage: () => {} };
+export const initialPageValue = { page: 1, setPage: () => {} };
 
 export const PageContext = createContext<TypePageContext>(initialPageValue);
 

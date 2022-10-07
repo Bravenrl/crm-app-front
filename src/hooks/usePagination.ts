@@ -1,4 +1,4 @@
-import { useContext, useMemo, useState } from 'react';
+import { useContext, useMemo } from 'react';
 import { ITEMS_PER_PAGE } from '../const';
 import { PageContext } from '../providers/page-provider';
 

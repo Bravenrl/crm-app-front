@@ -5,3 +5,18 @@ export type TypeItem = {
     count: number;
     distance: number;
 }
+
+export type TypeTableHeaders = {
+    date: string,
+    name: string,
+    count: string,
+    distance: string,
+  };
+  
+  export type TypeFilterParams = {
+    equal: string,
+    less: string,
+    more: string,
+    includes: string,
+  };
+  

@@ -40,4 +40,31 @@
   .buttonActive::before {
     opacity: 1;
   }
+
+  .buttonReset {
+    cursor: pointer;
+    position: relative;
+    width: 2em;
+    height: 2em;
+    border: none;
+    outline: none;
+    background-color: transparent;
+
+    &::after,  
+    &::before {
+      content: '';
+      position: absolute;
+      left: 15%;
+      top: 50%;
+      width: 1.3em;
+      height: 0.2em;
+      background: black;
+    }
+    &::before {
+      transform: rotate(45deg);
+    }
+    &::after {
+      transform: rotate(-45deg);
+    }
+  }
 }
