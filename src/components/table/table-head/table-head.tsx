@@ -3,9 +3,7 @@ import { TypeTableHeaders } from '../../../types';
 import Sort from '../../sort/sort';
 import styles from './table-head.module.scss';
 
-type TableHeadProps = {};
-
-function TableHead({}: TableHeadProps): JSX.Element {
+function TableHead(): JSX.Element {
   return (
     <thead>
       <tr>

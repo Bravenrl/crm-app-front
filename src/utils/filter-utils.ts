@@ -18,7 +18,6 @@ export const filterByField = (filter: TypeFilter) => {
     >;
 
     if (FilterMainParams[mainParam] === FilterMainParams.date) {
-      console.log('first');
       return filterByDate(item[mainParam] as string, extraParam, filter.value);
     }
 
