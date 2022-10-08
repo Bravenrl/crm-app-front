@@ -1,11 +1,12 @@
-import { useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { api } from '../api/api';
+import { DataContext } from '../providers/data-provider';
 import { TypeItem } from '../types';
 import { useFilter } from './useFilter';
 import { useSort } from './useSort';
 
 export const useData = () => {
-  const [data, setData] = useState<TypeItem[] | []>([]);
+  const {data, setData} = useContext(DataContext)
   const [isLoading, setIsLoading] = useState(true);
 
   const getData = async () => {
@@ -16,6 +17,7 @@ export const useData = () => {
 
   useEffect(() => {
     getData();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const filteredData = useFilter(data);

@@ -1,5 +1,5 @@
 import { Dispatch, SetStateAction } from 'react';
-import { TypeFilterExtraParams, TypeFilterMainParams, TypeTableHeaders } from '../types';
+import { TypeFilterExtraParams, TypeFilterMainParams, TypeItem, TypeTableHeaders } from '../types';
 
 export type TypeSetState<T> = Dispatch<SetStateAction<T>>;
 
@@ -27,6 +27,11 @@ export type TypeSortContext = {
 export type TypeFilterContext = {
     filter: TypeFilter;
     setFilter: TypeSetState<TypeFilter>;
+  };
+
+  export type TypeDataContext = {
+    data: TypeItem[];
+    setData: TypeSetState<TypeItem[]>;
   };
 
 export type TypeProvider = {

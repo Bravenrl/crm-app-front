@@ -30,3 +30,11 @@ export type TypeFilterFormFields = {
   extra: HTMLSelectElement;
   value: HTMLInputElement;
 };
+
+export type TypeItemFormFields = {
+  date: HTMLInputElement;
+  name: HTMLInputElement;
+  count: HTMLInputElement;
+  distance: HTMLInputElement;
+};
+
